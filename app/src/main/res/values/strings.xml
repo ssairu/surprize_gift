@@ -89,7 +89,8 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="menu_home">домой\n</string>
-    <string name="menu_present">Выбрать подарок</string>
-    <string name="menu_settings">Настройки</string>
+    <string name="menu_home" />
+    <string name="menu_present" />
+    <string name="menu_settings" />
+    <string name="surprise">SURPRISE</string>
 </resources>
