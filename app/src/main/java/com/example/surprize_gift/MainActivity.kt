@@ -2,11 +2,13 @@ package com.example.surprize_gift
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import com.example.surprize_gift.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var profile : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -16,6 +18,8 @@ class MainActivity : AppCompatActivity() {
             .beginTransaction()
             .replace(R.id.main_fragment, MainFragment.newInstance())
             .commit()
+
+
     }
 
 

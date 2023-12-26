@@ -7,7 +7,11 @@ android {
     namespace = "com.example.surprize_gift"
     compileSdk = 34
 
-
+    buildFeatures{
+        //noinspection DataBindingWithoutKapt
+        dataBinding = true
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.example.surprize_gift"
