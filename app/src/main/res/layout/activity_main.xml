@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <view
-        android:id="@+id/view"
+        android:id="@+id/header_background"
         class="androidx.constraintlayout.widget.ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="68dp"
@@ -19,57 +19,90 @@
 
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_gravity="start"
-        app:menu="@menu/navigation_items"
         android:background="#190733"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/nav_gift"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nav_home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_present" />
+
+        <ImageView
+            android:id="@+id/nav_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_home_active" />
+
+        <ImageView
+            android:id="@+id/nav_settings"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/nav_home"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_settings" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/icon_gift_header"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/header_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_gift_main" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/logo_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:text="@string/surprise"
         android:fontFamily="@font/ink_free"
-        android:textSize="32sp"
+        android:text="@string/surprise"
         android:textColor="#9D1919"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        android:textSize="32sp"
+        android:layout_marginStart="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/header_background"
+        app:layout_constraintStart_toEndOf="@+id/icon_gift_header"
+        app:layout_constraintTop_toTopOf="@+id/header_background" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/account_header"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/header_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_account" />
 
     <FrameLayout
+        android:id="@+id/main_fragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
+        app:layout_constraintTop_toBottomOf="@+id/header_background">
+
 
     </FrameLayout>
 
