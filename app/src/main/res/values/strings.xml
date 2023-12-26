@@ -97,4 +97,6 @@
     <string name="surprise_gift">ПОДАРОК СЮРПРИЗ!</string>
     <string name="try_surprise">ПОПРОБУЙТЕ ПОДАРОК СЮРПРИЗ!</string>
     <string name="header_ideas">Идеи для подарков</string>
+    <string name="login_email">Пошта</string>
+    <string name="login_password">Password</string>
 </resources>
