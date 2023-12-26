@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             "HOME_FRAG" -> toHome()
             "LOGIN_FRAG" -> toLogin()
             "GIFT_FRAG" -> toGift()
+            "REGISTER_FRAG" -> toRegister()
             else -> toLogin()
         }
     }
@@ -100,6 +101,18 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.main_fragment, GiftFragment.newInstance(), "GIFT_FRAG")
+            commit()
+        }
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    fun toRegister(){
+        binding.navHome.setImageDrawable(resources.getDrawable(R.drawable.icon_home))
+        binding.navGift.setImageDrawable(resources.getDrawable(R.drawable.icon_present))
+        binding.navSettings.setImageDrawable(resources.getDrawable(R.drawable.icon_settings_active))
+
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.main_fragment, RegistrationFragment(), "REGISTER_FRAG")
             commit()
         }
     }

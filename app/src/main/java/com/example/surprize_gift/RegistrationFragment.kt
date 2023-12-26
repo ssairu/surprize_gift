@@ -20,7 +20,7 @@ class RegistrationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<TextView>(R.id.alreadyAccount).setOnClickListener{
             val fragmentMan = requireFragmentManager().beginTransaction()
-            fragmentMan.replace(R.id.main_fragment, LoginFragment())
+            fragmentMan.replace(R.id.main_fragment, LoginFragment(), "LOGIN_FRAG")
             fragmentMan.commit()
         }
     }
