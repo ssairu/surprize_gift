@@ -104,8 +104,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="143dp"
-        android:layout_height="34dp"
+        android:layout_width="196dp"
+        android:layout_height="29dp"
         android:layout_marginBottom="6dp"
         android:gravity="center"
         android:text="Зарегистрироваться"
@@ -113,9 +113,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="@+id/rectangle_3"
         app:layout_constraintTop_toTopOf="@+id/rectangle_3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/rectangle_2"
@@ -192,4 +193,17 @@
         app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
         app:layout_constraintStart_toStartOf="@+id/rectangle_4"
         app:layout_constraintTop_toTopOf="@+id/rectangle_4" />
+
+    <TextView
+        android:id="@+id/alreadyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Есть аккаунт?"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/rectangle_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_password_field"
+        app:layout_constraintVertical_bias="0.153" />
 </androidx.constraintlayout.widget.ConstraintLayout>
