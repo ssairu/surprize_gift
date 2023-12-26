@@ -42,6 +42,10 @@ class MainActivity : AppCompatActivity() {
             toHome()
         }
 
+        binding.navGift.setOnClickListener {
+            toGift()
+        }
+
         homeButton = findViewById(R.id.nav_home)
         homeButton.setOnClickListener{
             toHome()
@@ -58,13 +62,14 @@ class MainActivity : AppCompatActivity() {
         when (tag){
             "HOME_FRAG" -> toHome()
             "LOGIN_FRAG" -> toLogin()
+            "GIFT_FRAG" -> toGift()
             else -> toLogin()
         }
     }
 
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    private fun toLogin(){
+    fun toLogin(){
         binding.navHome.setImageDrawable(resources.getDrawable(R.drawable.icon_home))
         binding.navGift.setImageDrawable(resources.getDrawable(R.drawable.icon_present))
         binding.navSettings.setImageDrawable(resources.getDrawable(R.drawable.icon_settings_active))
@@ -87,6 +92,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
+    fun toGift(){
+        binding.navHome.setImageDrawable(resources.getDrawable(R.drawable.icon_home))
+        binding.navGift.setImageDrawable(resources.getDrawable(R.drawable.icon_present_active))
+        binding.navSettings.setImageDrawable(resources.getDrawable(R.drawable.icon_settings))
+
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.main_fragment, GiftFragment.newInstance(), "GIFT_FRAG")
+            commit()
+        }
+    }
 
 
 

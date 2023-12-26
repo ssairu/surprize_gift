@@ -11,4 +11,9 @@
     <string name="temp_idea_header">idea 1</string>
     <string name="login_email">Пошта</string>
     <string name="login_password">Password</string>
+    <string name="title_q_1">Что это такое?</string>
+    <string name="body_q1">Это подарок, о котором вы ничего не знаете, кроме примернй суммы, на которую собрано содержимое</string>
+    <string name="title_q2">Кому его можно подарить?</string>
+    <string name="body_q2">Вы можете подарить этот подарок как себе, так и открыть его вместе со своими друзьями и любимыми. Такой подарок принесёт вам новые впечатления</string>
+    <string name="buy">Купить</string>
 </resources>
