@@ -30,6 +30,18 @@ class MainActivity : AppCompatActivity() {
             toLogin()
         }
 
+        binding.navSettings.setOnClickListener {
+            toLogin()
+        }
+
+        binding.iconGiftHeader.setOnClickListener {
+            toHome()
+        }
+
+        binding.logoHeader.setOnClickListener{
+            toHome()
+        }
+
         homeButton = findViewById(R.id.nav_home)
         homeButton.setOnClickListener{
             toHome()
