@@ -29,6 +29,11 @@ class IdeaAdapter(
         when(holder.itemViewType){
             0 -> {
                 val holder0 = holder as ViewHolder1
+                with(holder0) {
+                    binding1.bigGift.setOnClickListener {
+                        //TODO
+                    }
+                }
             }
             1 -> {
                 val holder1 = holder as ViewHolder2

@@ -6,30 +6,19 @@
     android:layout_height="match_parent"
     android:layout_marginBottom="15dp">
 
-    <ImageView
-        android:id="@+id/banner_gift"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/banner_with_gifts"
-        android:src="@drawable/banner_gifts"/>
-
 
     <ImageView
         android:id="@+id/big_gift"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/radial_white"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="23dp"
+        android:background="@drawable/radial_blue_2"
         android:contentDescription="@string/surprise_gift"
         android:src="@drawable/big_gift"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginHorizontal="20dp"
-        app:layout_constraintTop_toBottomOf="@id/banner_gift" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -59,7 +48,7 @@
         android:id="@+id/header_ideas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/header_ideas"
+        android:text="@string/header_ready_gifts"
         android:textColor="@color/main_text_color"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

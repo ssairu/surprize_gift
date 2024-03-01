@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             toLogin()
         }
 
-        binding.iconGiftHeader.setOnClickListener {
+        binding.logoHeader.setOnClickListener{
             toHome()
         }
 
@@ -43,11 +43,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.navGift.setOnClickListener {
-            toGift()
-        }
-
-        homeButton = findViewById(R.id.nav_home)
-        homeButton.setOnClickListener{
             toHome()
         }
     }
@@ -71,7 +66,8 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     fun toLogin(){
-        binding.navHome.setImageDrawable(resources.getDrawable(R.drawable.icon_home))
+        binding.navCalendar.setImageDrawable(resources.getDrawable(R.drawable.icon_calendar))
+        binding.navIdea.setImageDrawable(resources.getDrawable(R.drawable.icon_idea))
         binding.navGift.setImageDrawable(resources.getDrawable(R.drawable.icon_present))
         binding.navSettings.setImageDrawable(resources.getDrawable(R.drawable.icon_settings_active))
 
@@ -83,8 +79,9 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     fun toHome(){
-        binding.navHome.setImageDrawable(resources.getDrawable(R.drawable.icon_home_active))
-        binding.navGift.setImageDrawable(resources.getDrawable(R.drawable.icon_present))
+        binding.navCalendar.setImageDrawable(resources.getDrawable(R.drawable.icon_calendar))
+        binding.navIdea.setImageDrawable(resources.getDrawable(R.drawable.icon_idea))
+        binding.navGift.setImageDrawable(resources.getDrawable(R.drawable.icon_present_active))
         binding.navSettings.setImageDrawable(resources.getDrawable(R.drawable.icon_settings))
 
         supportFragmentManager.beginTransaction().apply {
@@ -95,7 +92,8 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     fun toGift(){
-        binding.navHome.setImageDrawable(resources.getDrawable(R.drawable.icon_home))
+        binding.navCalendar.setImageDrawable(resources.getDrawable(R.drawable.icon_calendar))
+        binding.navIdea.setImageDrawable(resources.getDrawable(R.drawable.icon_idea))
         binding.navGift.setImageDrawable(resources.getDrawable(R.drawable.icon_present_active))
         binding.navSettings.setImageDrawable(resources.getDrawable(R.drawable.icon_settings))
 
@@ -107,7 +105,8 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     fun toRegister(){
-        binding.navHome.setImageDrawable(resources.getDrawable(R.drawable.icon_home))
+        binding.navCalendar.setImageDrawable(resources.getDrawable(R.drawable.icon_calendar))
+        binding.navIdea.setImageDrawable(resources.getDrawable(R.drawable.icon_idea))
         binding.navGift.setImageDrawable(resources.getDrawable(R.drawable.icon_present))
         binding.navSettings.setImageDrawable(resources.getDrawable(R.drawable.icon_settings_active))
 
