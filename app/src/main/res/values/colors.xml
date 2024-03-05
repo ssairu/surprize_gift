@@ -2,7 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="main_background">#1D1B20</color>
-    <color name="main_text_color">#FFFFFF</color>
+    <color name="gray">#7D90A1</color>
+    <color name="main_background">#FFFFFFFF</color>
+    <color name="main_text_color">#FF000000</color>
     <color name="card_main_text">#000000</color>
+    <color name="blue_1">#9BD8DB</color>
+    <color name="blue_2">#71C6CC</color>
+    <color name="blue_3">#00A9B4</color>
+    <color name="nav_active">#00A9B4</color>
+    <color name="nav">#9BD8DB</color>
 </resources>

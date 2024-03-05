@@ -12,7 +12,7 @@
         class="androidx.constraintlayout.widget.ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:background="@drawable/head_gradient"
+        android:background="@color/blue_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,66 +23,79 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#190733"
+        android:background="@color/main_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         >
 
-        <ImageView
-            android:id="@+id/nav_gift"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/nav_home"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_present" />
-
-        <ImageView
-            android:id="@+id/nav_home"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@color/nav_active"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/nav_gift"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nav_idea"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_home_active" />
+            app:srcCompat="@drawable/icon_present_active" />
+
+        <ImageView
+            android:id="@+id/nav_idea"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nav_calendar"
+            app:layout_constraintStart_toEndOf="@+id/nav_gift"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_idea" />
+
+        <ImageView
+            android:id="@+id/nav_calendar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nav_settings"
+            app:layout_constraintStart_toEndOf="@+id/nav_idea"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_calendar" />
 
         <ImageView
             android:id="@+id/nav_settings"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nav_home"
+            app:layout_constraintStart_toEndOf="@+id/nav_calendar"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/icon_settings" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/icon_gift_header"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/header_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_gift_main" />
 
     <TextView
         android:id="@+id/logo_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/ink_free"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/poller_one"
         android:text="@string/surprise"
-        android:textColor="#9D1919"
+        android:textColor="@color/black"
         android:textSize="32sp"
-        android:layout_marginStart="14dp"
         app:layout_constraintBottom_toBottomOf="@+id/header_background"
-        app:layout_constraintStart_toEndOf="@+id/icon_gift_header"
-        app:layout_constraintTop_toTopOf="@+id/header_background" />
+        app:layout_constraintStart_toStartOf="@+id/header_background"
+        app:layout_constraintTop_toTopOf="@+id/header_background"
+        app:layout_constraintVertical_bias="0.571" />
 
     <ImageView
         android:id="@+id/account_header"
