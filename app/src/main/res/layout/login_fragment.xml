@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:background="#1D1B20">
 
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+
     <TextView
         android:id="@+id/some_id"
         android:layout_width="194dp"
@@ -23,9 +25,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
-    <!-- Auto layout, variables, and unit scale are not yet supported -->
+        app:layout_constraintVertical_bias="0.001" />
 
     <View
         android:id="@+id/email_login_field"
