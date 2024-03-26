@@ -1,4 +1,4 @@
-package com.example.surprize_gift
+package com.example.surprize_gift.ui.Ideas
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,12 +6,21 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.surprize_gift.databinding.IdeaItemBinding
 import com.example.surprize_gift.databinding.MainHeadBinding
+import com.example.surprize_gift.R
+import com.example.surprize_gift.data.model.Idea
+import com.example.surprize_gift.ui.base.MainActivity
 
 
 class IdeaAdapter(
-    private val ideas: MutableList<Idea>,
+
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    private var ideas = mutableListOf<Idea>()
+
+    fun setIdeaList(ideas: List<Idea>) {
+        this.ideas = ideas.toMutableList()
+        notifyDataSetChanged()
+    }
     inner class ViewHolder1(val binding1: MainHeadBinding) : RecyclerView.ViewHolder(binding1.root)
     inner class ViewHolder2(val binding: IdeaItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -38,7 +47,8 @@ class IdeaAdapter(
             1 -> {
                 val holder1 = holder as ViewHolder2
                 with(holder1) {
-                    binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_1, null)
+                    binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources,
+                        R.drawable.radial_blue_1, null)
                     binding.headerIdea.text = ideas[position-1].title
                     binding.bodyIdea.text = ideas[position-1].body
                 }
@@ -46,7 +56,8 @@ class IdeaAdapter(
             2 -> {
                 val holder1 = holder as ViewHolder2
                 with(holder1) {
-                    binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_2, null)
+                    binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources,
+                        R.drawable.radial_blue_2, null)
                     binding.headerIdea.text = ideas[position-1].title
                     binding.bodyIdea.text = ideas[position-1].body
                 }
@@ -54,7 +65,8 @@ class IdeaAdapter(
             3 -> {
                 val holder1 = holder as ViewHolder2
                 with(holder1) {
-                    binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_3, null)
+                    binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources,
+                        R.drawable.radial_blue_3, null)
                     binding.headerIdea.text = ideas[position-1].title
                     binding.bodyIdea.text = ideas[position-1].body
                 }
