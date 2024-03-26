@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background"
-    tools:context=".MainActivity">
+    tools:context=".ui.base.MainActivity">
 
     <view
         android:id="@+id/header_background"
@@ -54,6 +54,7 @@
             android:id="@+id/nav_idea"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/nav_calendar"
             app:layout_constraintStart_toEndOf="@+id/nav_gift"
@@ -64,6 +65,7 @@
             android:id="@+id/nav_calendar"
             android:layout_width="35dp"
             android:layout_height="35dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/nav_settings"
             app:layout_constraintStart_toEndOf="@+id/nav_idea"

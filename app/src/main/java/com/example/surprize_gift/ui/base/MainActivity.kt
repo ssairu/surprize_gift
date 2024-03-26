@@ -1,10 +1,15 @@
-package com.example.surprize_gift
+package com.example.surprize_gift.ui.base
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
+import com.example.surprize_gift.GiftFragment
+import com.example.surprize_gift.R
 import com.example.surprize_gift.databinding.ActivityMainBinding
+import com.example.surprize_gift.ui.Ideas.MainFragment
+import com.example.surprize_gift.ui.register.LoginFragment
+import com.example.surprize_gift.ui.register.RegistrationFragment
 
 
 class MainActivity : AppCompatActivity() {
