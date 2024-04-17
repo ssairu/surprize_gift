@@ -1,12 +1,13 @@
 package com.example.surprize_gift.data.model
 
+import android.icu.text.CaseMap.Title
 import com.google.gson.annotations.SerializedName
 
 data class GiftCard(
     @SerializedName("id")
     val id: String? = null,
-    @SerializedName("name")
-    val name: String = "",
+    @SerializedName("title")
+    val title: String = "",
     @SerializedName("description")
     val description: String = "",
     @SerializedName("url")

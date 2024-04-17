@@ -5,7 +5,9 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.surprize_gift.R
+import com.example.surprize_gift.data.model.GiftCard
 import com.example.surprize_gift.data.model.Idea
+import com.example.surprize_gift.databinding.GiftCardBinding
 import com.example.surprize_gift.databinding.IdeaItemBinding
 import com.example.surprize_gift.databinding.MainHeadBinding
 import com.example.surprize_gift.ui.base.MainActivity
@@ -14,18 +16,18 @@ class GiftsAdapter(
 
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var ideas = mutableListOf<Idea>()
+    private var gifts = mutableListOf<GiftCard>()
 
-    fun setMovieList(gifts: List<Idea>) {
-        this.ideas = gifts.toMutableList()
+    fun setGiftList(gifts: List<GiftCard>) {
+        this.gifts = gifts.toMutableList()
         notifyDataSetChanged()
     }
     inner class ViewHolder1(val binding1: MainHeadBinding) : RecyclerView.ViewHolder(binding1.root)
-    inner class ViewHolder2(val binding: IdeaItemBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder2(val binding: GiftCardBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val binding1 = MainHeadBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        val binding2 = IdeaItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding2 = GiftCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
         return when(viewType){
             0 -> ViewHolder1(binding1)
@@ -47,24 +49,24 @@ class GiftsAdapter(
                 val holder1 = holder as ViewHolder2
                 with(holder1) {
                     binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_1, null)
-                    binding.headerIdea.text = ideas[position-1].title
-                    binding.bodyIdea.text = ideas[position-1].body
+                    binding.headerIdea.text = gifts[position-1].title
+                    binding.bodyIdea.text = gifts[position-1].description
                 }
             }
             2 -> {
                 val holder1 = holder as ViewHolder2
                 with(holder1) {
                     binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_2, null)
-                    binding.headerIdea.text = ideas[position-1].title
-                    binding.bodyIdea.text = ideas[position-1].body
+                    binding.headerIdea.text = gifts[position-1].title
+                    binding.bodyIdea.text = gifts[position-1].description
                 }
             }
             3 -> {
                 val holder1 = holder as ViewHolder2
                 with(holder1) {
                     binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_3, null)
-                    binding.headerIdea.text = ideas[position-1].title
-                    binding.bodyIdea.text = ideas[position-1].body
+                    binding.headerIdea.text = gifts[position-1].title
+                    binding.bodyIdea.text = gifts[position-1].description
                 }
             }
         }
@@ -83,6 +85,6 @@ class GiftsAdapter(
 
     // return the size of languageList
     override fun getItemCount(): Int {
-        return ideas.size+1
+        return gifts.size+1
     }
 }
