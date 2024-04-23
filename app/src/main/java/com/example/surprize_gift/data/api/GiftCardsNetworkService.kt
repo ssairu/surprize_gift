@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 interface GiftCardsNetworkService{
-    @GET("api?s=batman")
+    @GET("/api/gifts")
     fun getAllGifts(): Call<TopGiftsResponse>
 
     companion object {

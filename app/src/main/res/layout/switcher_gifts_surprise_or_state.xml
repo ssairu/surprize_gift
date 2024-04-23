@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/switcher_gifts_surprise_or_state">
+
+    <TextView
+        android:id="@+id/surprise_gift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/surprise_label"
+        android:textAlignment="center"
+        android:textColor="@color/blue_1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf= "@id/ready_gift"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ready_gift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ready"
+        android:textAlignment="center"
+        android:textColor="@color/blue_1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/surprise_gift"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/underline1"
+        android:layout_width="200dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/blue_1"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/ready_gift"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/surprise_gift" />
+
+    <View
+        android:id="@+id/underline2"
+        android:layout_width="200dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="20dp"
+        android:visibility="visible"
+        android:background="@color/blue_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/surprise_gift"
+        app:layout_constraintTop_toBottomOf="@id/surprise_gift" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

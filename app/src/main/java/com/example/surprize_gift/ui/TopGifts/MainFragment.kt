@@ -45,6 +45,7 @@ class MainFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        print("ddskfjghskdfgh;kjsdfg")
         super.onViewCreated(view, savedInstanceState)
         viewModel =
             ViewModelProvider(this, GiftsViewModelFactory(TopGiftsRepository(retrofitService))).get(
@@ -67,8 +68,9 @@ class MainFragment : Fragment() {
 
         binding.rvIdeas.adapter = adapter
         viewModel.giftList.observe(viewLifecycleOwner, Observer {
-            Log.d(TAG, "ideaList: $it")
-            adapter.setGiftList(it)
+            Log.d(TAG, "giftList: $it")
+            if (it != null)
+                adapter.setGiftList(it)
         })
 
         viewModel.errorMessage.observe(viewLifecycleOwner, Observer {
