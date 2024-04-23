@@ -19,4 +19,5 @@
     <string name="header_ready_gifts">Интересные готовые подарки</string>
     <string name="ready">готовые</string>
     <string name="surprise_label">сюрприз</string>
+    <string name="price"> %1$s $</string>
 </resources>

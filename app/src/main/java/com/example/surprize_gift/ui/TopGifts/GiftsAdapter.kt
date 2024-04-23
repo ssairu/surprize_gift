@@ -1,5 +1,6 @@
 package com.example.surprize_gift.ui.TopGifts
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
@@ -35,6 +36,7 @@ class GiftsAdapter(
         }
     }
 
+
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder.itemViewType){
             0 -> {
@@ -51,6 +53,7 @@ class GiftsAdapter(
                     binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_1, null)
                     binding.headerIdea.text = gifts[position-1].title
                     binding.bodyIdea.text = gifts[position-1].description
+                    binding.price.text = binding.root.context.getString(R.string.price, gifts[position - 1].price)
                 }
             }
             2 -> {
@@ -59,6 +62,7 @@ class GiftsAdapter(
                     binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_2, null)
                     binding.headerIdea.text = gifts[position-1].title
                     binding.bodyIdea.text = gifts[position-1].description
+                    binding.price.text = binding.root.context.getString(R.string.price, gifts[position - 1].price)
                 }
             }
             3 -> {
@@ -67,6 +71,7 @@ class GiftsAdapter(
                     binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_3, null)
                     binding.headerIdea.text = gifts[position-1].title
                     binding.bodyIdea.text = gifts[position-1].description
+                    binding.price.text = binding.root.context.getString(R.string.price, gifts[position - 1].price)
                 }
             }
         }
