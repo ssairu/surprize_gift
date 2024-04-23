@@ -17,4 +17,7 @@
     <string name="body_q2">Вы можете подарить этот подарок как себе, так и открыть его вместе со своими друзьями и любимыми. Такой подарок принесёт вам новые впечатления</string>
     <string name="buy">Купить</string>
     <string name="header_ready_gifts">Интересные готовые подарки</string>
+    <string name="ready">готовые</string>
+    <string name="surprise_label">сюрприз</string>
+    <string name="price"> %1$s $</string>
 </resources>

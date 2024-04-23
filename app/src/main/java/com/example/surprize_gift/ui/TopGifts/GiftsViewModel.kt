@@ -12,14 +12,16 @@ import retrofit2.Response
 
 class GiftsViewModel(private val repository: TopGiftsRepository) : ViewModel() {
 
-    val movieList = MutableLiveData<List<GiftCard>>()
+    val giftList = MutableLiveData<List<GiftCard>>()
     val errorMessage = MutableLiveData<String>()
 
-    fun getAllMovies() {
+    fun getAllGifts() {
+//        giftList.postValue(repository.getAllGifts())
         val response = repository.getAllGifts()
         response.enqueue(object : Callback<TopGiftsResponse> {
             override fun onResponse(call: Call<TopGiftsResponse>, response: Response<TopGiftsResponse>) {
-                movieList.postValue(response.body()?.gifts)
+                giftList.postValue(response.body()?.gifts)
+                print(response.body()?.gifts)
             }
 
             override fun onFailure(call: Call<TopGiftsResponse>, t: Throwable) {

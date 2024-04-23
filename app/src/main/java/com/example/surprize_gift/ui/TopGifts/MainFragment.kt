@@ -1,4 +1,4 @@
-package com.example.surprize_gift.ui.Ideas
+package com.example.surprize_gift.ui.TopGifts
 
 import android.os.Bundle
 import android.util.Log
@@ -8,12 +8,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.surprize_gift.data.api.GiftCardsNetworkService
 import com.example.surprize_gift.data.api.IdeasNetworkService
-import com.example.surprize_gift.data.model.Idea
+import com.example.surprize_gift.data.repository.TopGiftsRepository
 import com.example.surprize_gift.data.repository.TopIdeasRepository
 import com.example.surprize_gift.databinding.FragmentMainBinding
+import com.example.surprize_gift.ui.Ideas.IdeaAdapter
+import com.example.surprize_gift.ui.Ideas.IdeaViewModel
+import com.example.surprize_gift.ui.Ideas.IdeaViewModelFactory
 
 class MainFragment : Fragment() {
 
@@ -22,11 +27,12 @@ class MainFragment : Fragment() {
     }
 
     private lateinit var binding: FragmentMainBinding
-    lateinit var viewModel: IdeaViewModel
+    lateinit var viewModel: GiftsViewModel
 
-    private val retrofitService = IdeasNetworkService.getInstance()
-    private val TAG = "IdeaFrag"
-    val adapter = IdeaAdapter()
+
+    private val retrofitService = GiftCardsNetworkService.getInstance()
+    private val TAG = "GiftFrag"
+    val adapter = GiftsAdapter()
 
 
     override fun onCreateView(
@@ -39,26 +45,38 @@ class MainFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        print("ddskfjghskdfgh;kjsdfg")
         super.onViewCreated(view, savedInstanceState)
         viewModel =
-            ViewModelProvider(this, IdeaViewModelFactory(TopIdeasRepository(retrofitService))).get(
-                IdeaViewModel::class.java
+            ViewModelProvider(this, GiftsViewModelFactory(TopGiftsRepository(retrofitService))).get(
+                GiftsViewModel::class.java
             )
 
-        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(view.context)
+        val layoutManager = GridLayoutManager(view.context, 2)
+
+        layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                return when (position){
+                    0 -> 2
+                    else ->  1
+                }
+            }
+        }
+
         binding.rvIdeas.layoutManager = layoutManager
 
 
         binding.rvIdeas.adapter = adapter
-        viewModel.ideaList.observe(viewLifecycleOwner, Observer {
-            Log.d(TAG, "ideaList: $it")
-            adapter.setIdeaList(it)
+        viewModel.giftList.observe(viewLifecycleOwner, Observer {
+            Log.d(TAG, "giftList: $it")
+            if (it != null)
+                adapter.setGiftList(it)
         })
 
         viewModel.errorMessage.observe(viewLifecycleOwner, Observer {
             Log.d(TAG, "errorMessage: $it")
         })
 
-        viewModel.getAllMovies()
+        viewModel.getAllGifts()
     }
 }
