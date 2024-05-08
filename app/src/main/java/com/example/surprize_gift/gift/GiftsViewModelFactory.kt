@@ -1,8 +1,8 @@
-package com.example.surprize_gift.ui.TopGifts
+package com.example.surprize_gift.gift
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.surprize_gift.data.repository.TopGiftsRepository
+import com.example.surprize_gift.gift.network.TopGiftsRepository
 
 class GiftsViewModelFactory(private val repository: TopGiftsRepository) :
     ViewModelProvider.Factory {

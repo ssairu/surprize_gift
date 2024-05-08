@@ -1,15 +1,12 @@
-package com.example.surprize_gift.ui.TopGifts
+package com.example.surprize_gift.gift.ui
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.surprize_gift.R
-import com.example.surprize_gift.data.model.GiftCard
-import com.example.surprize_gift.data.model.Idea
+import com.example.surprize_gift.gift.data.Gift
 import com.example.surprize_gift.databinding.GiftCardBinding
-import com.example.surprize_gift.databinding.IdeaItemBinding
 import com.example.surprize_gift.databinding.MainHeadBinding
 import com.example.surprize_gift.ui.base.MainActivity
 
@@ -17,9 +14,9 @@ class GiftsAdapter(
 
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var gifts = mutableListOf<GiftCard>()
+    private var gifts = mutableListOf<Gift>()
 
-    fun setGiftList(gifts: List<GiftCard>) {
+    fun setGiftList(gifts: List<Gift>) {
         this.gifts = gifts.toMutableList()
         notifyDataSetChanged()
     }

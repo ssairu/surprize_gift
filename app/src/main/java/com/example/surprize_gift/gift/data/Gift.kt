@@ -1,8 +1,8 @@
-package com.example.surprize_gift.data.model
+package com.example.surprize_gift.gift.data
 
 import com.google.gson.annotations.SerializedName
 
-data class GiftCard(
+data class Gift(
     @SerializedName("id")
     val id: String? = null,
     @SerializedName("name")
@@ -13,8 +13,4 @@ data class GiftCard(
     val category: String = "",
     @SerializedName("price")
     val price: String = "",
-//    @SerializedName("url")
-//    val url: String = "",
-//    @SerializedName("urlToImage")
-//    val imageUrl: String = "",
 )
