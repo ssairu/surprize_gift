@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class TopGiftsResponse(
     @SerializedName("gifts")
-    val gifts: List<GiftCard>,
+    val gifts: List<Gift>,
 )

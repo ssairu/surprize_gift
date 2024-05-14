@@ -1,4 +1,4 @@
-package com.example.surprize_gift.ui.Ideas
+package com.example.surprize_gift.ui.ideas
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import com.example.surprize_gift.databinding.IdeaItemBinding
 import com.example.surprize_gift.databinding.MainHeadBinding
 import com.example.surprize_gift.R
 import com.example.surprize_gift.data.model.Idea
-import com.example.surprize_gift.ui.base.MainActivity
+import com.example.surprize_gift.ui.home.MainActivity
 
 
 class IdeaAdapter(
