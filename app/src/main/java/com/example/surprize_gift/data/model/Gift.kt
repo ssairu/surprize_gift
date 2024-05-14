@@ -2,7 +2,7 @@ package com.example.surprize_gift.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class GiftCard(
+data class Gift(
     @SerializedName("id")
     val id: String? = null,
     @SerializedName("name")

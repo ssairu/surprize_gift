@@ -1,4 +1,4 @@
-package com.example.surprize_gift.ui.base
+package com.example.surprize_gift.ui.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import com.example.surprize_gift.GiftFragment
 import com.example.surprize_gift.R
 import com.example.surprize_gift.databinding.ActivityMainBinding
-import com.example.surprize_gift.ui.TopGifts.MainFragment
+import com.example.surprize_gift.ui.topGifts.GiftsFragment
 import com.example.surprize_gift.ui.register.LoginFragment
 import com.example.surprize_gift.ui.register.RegistrationFragment
 
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         binding.navSettings.setImageDrawable(resources.getDrawable(R.drawable.icon_settings))
 
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.main_fragment, MainFragment.newInstance(), "HOME_FRAG")
+            replace(R.id.main_fragment, GiftsFragment.newInstance(), "HOME_FRAG")
             commit()
         }
     }

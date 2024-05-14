@@ -1,4 +1,4 @@
-package com.example.surprize_gift.ui.TopGifts
+package com.example.surprize_gift.ui.topGifts
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

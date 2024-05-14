@@ -1,13 +1,9 @@
-package com.example.surprize_gift.ui.Ideas
+package com.example.surprize_gift.ui.ideas
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.surprize_gift.data.model.Idea
-import com.example.surprize_gift.data.model.TopIdeas
 import com.example.surprize_gift.data.repository.TopIdeasRepository
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class IdeaViewModel(private val repository: TopIdeasRepository) : ViewModel() {
 

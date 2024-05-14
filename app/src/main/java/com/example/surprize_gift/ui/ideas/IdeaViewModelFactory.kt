@@ -1,4 +1,4 @@
-package com.example.surprize_gift.ui.Ideas
+package com.example.surprize_gift.ui.ideas
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

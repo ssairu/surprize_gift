@@ -1,8 +1,6 @@
 package com.example.surprize_gift.data.repository
 
 import com.example.surprize_gift.data.api.GiftCardsNetworkService
-import com.example.surprize_gift.data.model.GiftCard
-import com.example.surprize_gift.data.model.Idea
 
 class TopGiftsRepository(private val networkService: GiftCardsNetworkService) {
 

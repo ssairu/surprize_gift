@@ -1,38 +1,33 @@
-package com.example.surprize_gift.ui.TopGifts
+package com.example.surprize_gift.ui.topGifts
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.surprize_gift.R
-import com.example.surprize_gift.data.model.GiftCard
-import com.example.surprize_gift.data.model.Idea
+import com.example.surprize_gift.data.model.Gift
 import com.example.surprize_gift.databinding.GiftCardBinding
-import com.example.surprize_gift.databinding.IdeaItemBinding
 import com.example.surprize_gift.databinding.MainHeadBinding
-import com.example.surprize_gift.ui.base.MainActivity
+import com.example.surprize_gift.ui.home.MainActivity
 
 class GiftsAdapter(
 
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var gifts = mutableListOf<GiftCard>()
+    private var gifts = mutableListOf<Gift>()
 
-    fun setGiftList(gifts: List<GiftCard>) {
+    fun setGiftList(gifts: List<Gift>) {
         this.gifts = gifts.toMutableList()
         notifyDataSetChanged()
     }
-    inner class ViewHolder1(val binding1: MainHeadBinding) : RecyclerView.ViewHolder(binding1.root)
-    inner class ViewHolder2(val binding: GiftCardBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val binding1 = MainHeadBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        val binding2 = GiftCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val bindingHead = MainHeadBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val bindingCards = GiftCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
         return when(viewType){
-            0 -> ViewHolder1(binding1)
-            else -> ViewHolder2(binding2)
+            0 -> HeadViewHolder(bindingHead)
+            else -> CardsViewHolder(bindingCards)
         }
     }
 
@@ -40,7 +35,7 @@ class GiftsAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder.itemViewType){
             0 -> {
-                val holder0 = holder as ViewHolder1
+                val holder0 = holder as HeadViewHolder
                 with(holder0) {
                     binding1.bigGift.setOnClickListener {
                         (binding1.root.context as MainActivity).toGift()
@@ -48,7 +43,7 @@ class GiftsAdapter(
                 }
             }
             1 -> {
-                val holder1 = holder as ViewHolder2
+                val holder1 = holder as CardsViewHolder
                 with(holder1) {
                     binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_1, null)
                     binding.headerIdea.text = gifts[position-1].title
@@ -57,7 +52,7 @@ class GiftsAdapter(
                 }
             }
             2 -> {
-                val holder1 = holder as ViewHolder2
+                val holder1 = holder as CardsViewHolder
                 with(holder1) {
                     binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_2, null)
                     binding.headerIdea.text = gifts[position-1].title
@@ -66,7 +61,7 @@ class GiftsAdapter(
                 }
             }
             3 -> {
-                val holder1 = holder as ViewHolder2
+                val holder1 = holder as CardsViewHolder
                 with(holder1) {
                     binding.cardIdea.background = ResourcesCompat.getDrawable(binding.root.resources, R.drawable.radial_blue_3, null)
                     binding.headerIdea.text = gifts[position-1].title
