@@ -1,15 +1,14 @@
 package com.example.surprize_gift.ui.topGifts
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.surprize_gift.data.api.GiftCardsNetworkService
+import com.example.surprize_gift.data.api.GiftService
+import com.example.surprize_gift.data.api.giftService
 import com.example.surprize_gift.data.repository.TopGiftsRepository
 import com.example.surprize_gift.databinding.FragmentMainBinding
 
@@ -20,10 +19,8 @@ class GiftsFragment : Fragment() {
     }
 
     private lateinit var binding: FragmentMainBinding
-    lateinit var viewModel: GiftsViewModel
+    private lateinit var viewModel: GiftsViewModel
 
-
-    private val retrofitService = GiftCardsNetworkService.getInstance()
     private val TAG = "GiftFrag"
 
 
@@ -33,9 +30,10 @@ class GiftsFragment : Fragment() {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater)
         viewModel =
-            ViewModelProvider(this, GiftsViewModelFactory(TopGiftsRepository(retrofitService))).get(
-                GiftsViewModel::class.java
-            )
+            ViewModelProvider(
+                this,
+                GiftsViewModelFactory(TopGiftsRepository(giftService()))
+            ).get(GiftsViewModel::class.java)
         setupRecyclerView()
         return binding.root
     }
@@ -49,9 +47,9 @@ class GiftsFragment : Fragment() {
         val layoutManager = GridLayoutManager(view?.context, 2)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
-                return when (position) {
+                return when (position){
                     0 -> 2
-                    else -> 1
+                    else ->  1
                 }
             }
         }

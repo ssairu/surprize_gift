@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">surprize_gift</string>
-    <string name="menu_home" />
-    <string name="menu_present" />
-    <string name="menu_settings" />
     <string name="surprise">SURPRISE</string>
     <string name="banner_with_gifts">BANNER WITH GIFTS!</string>
     <string name="surprise_gift">ПОДАРОК СЮРПРИЗ!</string>

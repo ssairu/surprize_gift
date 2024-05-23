@@ -1,32 +1,47 @@
 package com.example.surprize_gift.ui.topGifts
 
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.surprize_gift.data.model.Gift
 import com.example.surprize_gift.data.model.TopGiftsResponse
 import com.example.surprize_gift.data.repository.TopGiftsRepository
+import com.google.gson.annotations.SerializedName
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class GiftsViewModel(private val repository: TopGiftsRepository) : ViewModel() {
 
-    val giftList = MutableLiveData<List<Gift>>()
-    val errorMessage = MutableLiveData<String>()
+data class GiftUI(
+    @SerializedName("id")
+    val id: String? = null,
+    @SerializedName("name")
+    val title: String = "",
+    @SerializedName("description")
+    val description: String = "",
+    @SerializedName("category")
+    val category: String = "",
+    @SerializedName("price")
+    val price: String = "",
+//    val type: Enum ()
+)
 
-    fun getAllGifts() {
-//        giftList.postValue(repository.getAllGifts())
-        val response = repository.getAllGifts()
-        response.enqueue(object : Callback<TopGiftsResponse> {
-            override fun onResponse(call: Call<TopGiftsResponse>, response: Response<TopGiftsResponse>) {
-                giftList.postValue(response.body()?.gifts)
-                print(response.body()?.gifts)
-            }
+class GiftsViewModel(
+    private val repository: TopGiftsRepository
+) : ViewModel() {
 
-            override fun onFailure(call: Call<TopGiftsResponse>, t: Throwable) {
-                errorMessage.postValue(t.message)
-            }
-        })
+    private val _giftList = MutableLiveData<List<Gift>>()
+    val giftList: LiveData<List<Gift>>
+        get() = _giftList
+
+    init {
+        viewModelScope.launch {
+            _giftList.value = repository.getAllGifts().gifts//.map {
+//                mapper
+//            }
+        }
     }
 }
