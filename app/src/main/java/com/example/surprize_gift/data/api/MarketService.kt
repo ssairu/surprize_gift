@@ -1,13 +1,15 @@
 package com.example.surprize_gift.data.api
 
+import com.example.surprize_gift.data.model.TopGiftsResponse
 import com.example.surprize_gift.utils.AppConstant
+import com.vk.sdk.api.market.dto.MarketGetResponseDto
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
 
 class MarketService {
-//    @GET("/api/gifts")
-//    suspend fun getAllTools(): MarketResponse
-
+//    @GET("/market/gifts")
+//    suspend fun getAllGifts(): MarketGetResponseDto
 }
 
 fun marketService(): GiftService {

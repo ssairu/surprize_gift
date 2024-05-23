@@ -17,4 +17,5 @@
     <string name="ready">готовые</string>
     <string name="surprise_label">сюрприз</string>
     <string name="price"> %1$s $</string>
+    <integer name="com_vk_sdk_AppId">51913537</integer>
 </resources>

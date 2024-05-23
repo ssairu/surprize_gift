@@ -19,6 +19,12 @@ import com.example.surprize_gift.ui.topGifts.GiftsFragment
 import com.example.surprize_gift.ui.topGifts.GiftsViewModel
 import com.example.surprize_gift.ui.topGifts.GiftsViewModelFactory
 import com.squareup.picasso.Picasso
+import com.vk.api.sdk.VK
+import com.vk.api.sdk.VKTokenExpiredHandler
+import com.vk.id.AccessToken
+import com.vk.id.VKID
+import com.vk.id.refresh.VKIDRefreshTokenCallback
+import com.vk.id.refresh.VKIDRefreshTokenFail
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +34,27 @@ class MainActivity : AppCompatActivity() {
     private lateinit var homeButton: AppCompatImageView
     private val tagsFragment = arrayListOf("HOME_FRAG", "SETTINGS_FRAG", "GIFT_FRAG", "LOGIN_FRAG")
     private var page = "HOME_FRAG"
+
+
+    private val tokenTracker = object: VKTokenExpiredHandler {
+        override fun onTokenExpired() {
+            VKID.instance.refreshToken(
+                lifecycleOwner = this@MainActivity,
+                callback = object : VKIDRefreshTokenCallback {
+                    override fun onSuccess(token: AccessToken) {
+
+                    }
+                    override fun onFail(fail: VKIDRefreshTokenFail) {
+                        when (fail) {
+                            is VKIDRefreshTokenFail.FailedApiCall -> fail.description // Использование текста ошибки
+                            is VKIDRefreshTokenFail.RefreshTokenExpired -> fail // Это означает, что нужно пройти авторизацию заново
+                            else-> fail // Пользователь понимает, что сначала нужно авторизоваться
+                        }
+                    }
+                }
+            )
+        }
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,12 +68,14 @@ class MainActivity : AppCompatActivity() {
         }
         runFragByTag(page)
         setGOTOfrag()
+        VK.addTokenExpiredHandler(tokenTracker)
+
+
 
         if (AuthRepository.tryAuth().userData.photo100 != null) {
             Picasso.get().load(AuthRepository.tryAuth().userData.photo100).into(binding.accountHeader)
-            binding.logoHeader.text = AuthRepository.tryAuth().userData.firstName
         }
-
+        binding.logoHeader.text = AuthRepository.tryAuth().userData.firstName
     }
 
     private fun setGOTOfrag() {

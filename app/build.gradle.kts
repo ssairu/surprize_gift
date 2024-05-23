@@ -73,7 +73,9 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0")
-    implementation("com.vk.id:vkid:1.3.2")
+    implementation("com.vk.id:vkid:2.0.0-alpha")
     implementation("com.vk.id:onetap-xml:1.3.2")
     implementation("com.squareup.picasso:picasso:2.8")
+    implementation("com.vk:android-sdk-core:4.1.0")
+    implementation("com.vk:android-sdk-api:4.1.0")
 }

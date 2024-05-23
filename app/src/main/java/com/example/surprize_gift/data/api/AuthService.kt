@@ -6,11 +6,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
-class AuthService {
-    interface AuthService{
-        @GET("/api/gifts")
-        suspend fun getAllGifts(): TopGiftsResponse
-
-    }
+interface AuthService {
+    @GET("/api/gifts")
+    suspend fun getAllGifts(): TopGiftsResponse
 
 }
