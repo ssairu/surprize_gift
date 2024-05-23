@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
 
         if (AuthRepository.tryAuth().userData.photo100 != null) {
             Picasso.get().load(AuthRepository.tryAuth().userData.photo100).into(binding.accountHeader)
-            binding.logoHeader.text = AuthRepository.tryAuth().userData.firstName
         }
+        binding.name.text = AuthRepository.tryAuth().userData.firstName
 
     }
 

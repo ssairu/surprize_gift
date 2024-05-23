@@ -14,7 +14,6 @@
         android:layout_height="68dp"
         android:background="@color/blue_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -120,5 +119,16 @@
 
 
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/header_background"
+        app:layout_constraintEnd_toStartOf="@+id/account_header"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
